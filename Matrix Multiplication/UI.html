@@ -1,0 +1,298 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <link rel="stylesheet" href="Style.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <fieldset>
+      <legend>
+        <h5>Matrix Multiplication :</h5>
+      </legend>
+      <div class="row">
+        <div class="col-12" style="padding: 0px 80px">
+          <div class="row" style="padding-left: 10px">
+            <div class="col-sm-auto" style="padding-left: 10px; padding-top: 7px">
+              <h5>Select Type of Matrix :</h5>
+            </div>
+            <div class="col-sm-5" style="padding-left: 10px">
+              <select id="r1" class="form-control" aria-placeholder="" onchange="Display(this.value)"
+                style="width: 100%">
+                <option style="display: none" value="Choose any one">
+                  Choose any one
+                </option>
+                <option value="a2D">2D</option>
+                <option value="a3D">3D</option>
+                <option value="a4D">4D</option>
+              </select>
+            </div>
+            <div class="col-sm-2" style="margin: 0px; padding-top: 5px">
+              <button class="btn-primary" onclick="Clear()">Reset</button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="col-6" style="padding: 0px 80px">
+          <div class="row" style="padding-left: 10px">
+            <div class="col-sm-12" style="margin: 0px">
+              <h5>Matrix 1 :</h5>
+            </div>
+          </div>
+          <!-- <div class="row">
+                        <div class="col-sm-12" style="margin: 0px">
+                            <label> Select Type Of Matrix 1 : </label>
+                            <select id="r1" class="form-control" aria-placeholder="" onchange="Display(this.value)"
+                                style="width: 100%;">
+                                <option style="display:none;" value="Choose any one"> Choose any one</option>
+                                <option value="a2D">2D</option>
+                                <option value="a3D">3D</option>
+                                <option value="a4D">4D</option>
+                            </select>
+                        </div>
+                    </div> -->
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a11" type="text" class="form-control" onchange="Validate(this)" placeholder="a11"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a12" type="text" class="form-control" onchange="Validate(this)" placeholder="a12"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a13" type="text" class="form-control" onchange="Validate(this)" placeholder="a13"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a14" type="text" class="form-control" onchange="Validate(this)" placeholder="a14"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a21" type="text" class="form-control" onchange="Validate(this)" placeholder="a21"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a22" type="text" class="form-control" onchange="Validate(this)" placeholder="a22"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a23" type="text" class="form-control" onchange="Validate(this)" placeholder="a23"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a24" type="text" class="form-control" onchange="Validate(this)" placeholder="a24"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a31" type="text" class="form-control" onchange="Validate(this)" placeholder="a31"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a32" type="text" class="form-control" onchange="Validate(this)" placeholder="a32"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a33" type="text" class="form-control" onchange="Validate(this)" placeholder="a33"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a34" type="text" class="form-control" onchange="Validate(this)" placeholder="a34"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a41" type="text" class="form-control" onchange="Validate(this)" placeholder="a41"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a42" type="text" class="form-control" onchange="Validate(this)" placeholder="a42"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a43" type="text" class="form-control" onchange="Validate(this)" placeholder="a43"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="a44" type="text" class="form-control" onchange="Validate(this)" placeholder="a44"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <!-- <div class="col-sm-10" style="margin: 0px">
+                     <button
+                  id="ac"
+                  class="btn-primary btn-sm"
+                  onclick="Clear(this.id)"
+                >
+                  Clear
+                </button>
+              </div> -->
+            <div class="col-sm-2" style="margin: 0px">
+              <button class="btn-primary btn-sm" onclick="Multiply()">
+                Multiply
+              </button>
+            </div>
+          </div>
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <h5>Matrix 1 :</h5>
+          </div>
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <h2 id="al"></h2>
+          </div>
+          <br />
+        </div>
+
+        <div class="col-6" style="padding: 0px 80px">
+          <div class="row" style="padding-left: 10px">
+            <h5>Matrix 2 :</h5>
+          </div>
+          <!-- <div class="row">
+                        <div class="col-sm-12" style="margin: 0px">
+                            <label> Select Type OF Matrix 2 : </label>
+                            <select id="r2" class="form-control" aria-placeholder="" onchange="Display(this.value)"
+                                style="width: 100%;">
+                                <option style="display:none;" value="Choose any one"> Choose any one</option>
+                                <option value="b2D">2D</option>
+                                <option value="b3D">3D</option>
+                                <option value="b4D">4D</option>
+                            </select>
+                        </div>
+                    </div> -->
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b11" type="text" class="form-control" onchange="Validate(this)" placeholder="b11"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b12" type="text" class="form-control" onchange="Validate(this)" placeholder="b12"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b13" type="text" class="form-control" onchange="Validate(this)" placeholder="b13"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b14" type="text" class="form-control" onchange="Validate(this)" placeholder="b14"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b21" type="text" class="form-control" onchange="Validate(this)" placeholder="b21"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b22" type="text" class="form-control" onchange="Validate(this)" placeholder="b22"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b23" type="text" class="form-control" onchange="Validate(this)" placeholder="b23"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b24" type="text" class="form-control" onchange="Validate(this)" placeholder="b24"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b31" type="text" class="form-control" onchange="Validate(this)" placeholder="b31"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b32" type="text" class="form-control" onchange="Validate(this)" placeholder="b32"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b33" type="text" class="form-control" onchange="Validate(this)" placeholder="b33"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b34" type="text" class="form-control" onchange="Validate(this)" placeholder="b34"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b41" type="text" class="form-control" onchange="Validate(this)" placeholder="b41"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b42" type="text" class="form-control" onchange="Validate(this)" placeholder="b42"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b43" type="text" class="form-control" onchange="Validate(this)" placeholder="b43"
+                style="width: 100%" />
+            </div>
+            <div class="col-sm-3" style="margin: 0px">
+              <input id="b44" type="text" class="form-control" onchange="Validate(this)" placeholder="b44"
+                style="width: 100%" />
+            </div>
+          </div>
+          <br />
+          <!-- <div class="row" style="padding-left: 10px">
+              <button
+                id="bc"
+                class="btn-primary btn-sm"
+                onclick="Clear(this.id)"
+              >
+                Clear
+              </button>
+            </div> -->
+          <br />
+
+          <div class="row" style="padding-left: 20px; padding-top: 25px">
+            <h5>Matrix 2 :</h5>
+          </div>
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <h2 id="bl"></h2>
+          </div>
+          <br />
+        </div>
+        <div class="col-12" style="padding: 0px 80px">
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <h5>Output :</h5>
+          </div>
+          <br />
+          <div class="row" style="padding-left: 10px">
+            <h2 id="Ans"></h2>
+          </div>
+          <br />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <script src="Display.js"></script>
+  <script src="Backened.js"></script>
+</body>
+
+</html>
